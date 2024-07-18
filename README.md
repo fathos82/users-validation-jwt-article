@@ -9,7 +9,7 @@ Olá, Dev! Se você esbarrou por aqui, deve estar cansado de pular de tutorial e
 
 Para criar o projeto, você pode utilizar o [Spring Initializer](https://start.spring.io/). Eu prefiro usar o Maven para gerenciar minhas dependências. Você precisará adicionar os seguintes módulos:
 
-!https://prod-files-secure.s3.us-west-2.amazonaws.com/940820b4-5908-4f88-9e9f-f09fdd48ec45/0ca902ba-d82f-4949-946f-8004eed31cc6/Untitled.png
+![Spring Dependencies](https://github.com/user-attachments/assets/0699964c-10bb-4eb4-ab3b-f2b919985363)
 
 Para iniciar nosso projeto, utilizamos o Spring Initializr para configurar o ambiente de desenvolvimento. Selecionamos as dependências essenciais para nossa aplicação, incluindo Spring Web, Spring Data JPA, Postgres Driver e Spring Security. Essas tecnologias são fundamentais para o desenvolvimento de nossa solução, fornecendo recursos robustos para construção de APIs RESTful, acesso a banco de dados, autenticação e autorização seguras.
 
@@ -17,7 +17,7 @@ Nota: Eu escolhi o Postgres, mas você pode utilizar o banco de dados da sua pre
 
 Além disso, você deve configurar seu banco de dados no `application.properties`. Ficará algo parecido com isso:
 
-!https://prod-files-secure.s3.us-west-2.amazonaws.com/940820b4-5908-4f88-9e9f-f09fdd48ec45/68f09ebf-4516-4329-ab53-a7b47e14eb7f/Untitled.png
+![Bando de Dados Credenciais](https://github.com/user-attachments/assets/5e925dd8-739d-428f-8db6-f677a3816120)
 
 Não se esqueça de substituir pelas suas credenciais em: `url`, `username` e `password`.
 
@@ -121,7 +121,6 @@ Definimos agora um `UserRepository`:
 
 Seguindo a lógica de se manter dentro do framework, agora precisamos definir uma classe de serviço para nosso `SecurityUser` que implementa uma interface `UserDetailsService`. Será essa classe que será usada pelo `AuthenticationProvider` para validar seu usuário.
 
-// TALVER INSERIR TEXTO
 
 ```java
 @Service
@@ -289,7 +288,7 @@ password : 12345
 
 E você terá o seguinte resultado:
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/940820b4-5908-4f88-9e9f-f09fdd48ec45/7a10ac10-355a-4715-9487-c2b2527e68e9/7941ebe1-7ae9-4e6b-9be8-629baf28a81f.png)
+![Testando Validacao](https://github.com/user-attachments/assets/09b4ca7a-9fef-4242-9d42-1230387e885e)
 
 Provavelmente você deverá receber um 403 (Forbidden) na resposta. Não se preocupe! Isso acontece porque o `InitialAuthenticationFilter` está autenticando, mas não retornamos um token.
 
@@ -400,7 +399,7 @@ Entendeu isso??? parece confuso, um monte de codigo relacionado tokenização jw
 
 agora o nosso filtro após validar nosso login, retornara nosso token pelo header:
 
-![Captura de tela 2024-07-18 154300.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/940820b4-5908-4f88-9e9f-f09fdd48ec45/a311b004-10f2-4069-bcb5-df1f24a284d0/Captura_de_tela_2024-07-18_154300.png)
+![Obtendo Token](https://github.com/user-attachments/assets/0c83d615-5d24-4214-8f99-2b6434b34d52)
 
 Guarde esse token, pois ele será necessário para acessar os endpoints protegidos.
 
@@ -500,19 +499,19 @@ simples, não é mesmo? Se tudo estiver configurado corretamente, esta será uma
 
 Exemplo:
 
-![Captura de tela 2024-07-18 154300.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/940820b4-5908-4f88-9e9f-f09fdd48ec45/ebc10fef-e9dd-4217-a5d8-81c3fd94680a/08ae65e0-0099-495c-954c-df7adc9a3585.png)
+![Obtenha o Token](https://github.com/user-attachments/assets/d5caed15-d6d9-442a-8162-d163d48f5857)
 
-1. **Adicione o Token**: Copie o token obtido e adicione-o ao cabeçalho de Authorization de sua requisição, utilizando o prefixo "Bearer " seguido pelo token.
+2. **Adicione o Token**: Copie o token obtido e adicione-o ao cabeçalho de Authorization de sua requisição, utilizando o prefixo "Bearer " seguido pelo token.
 
 Exemplo:
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/940820b4-5908-4f88-9e9f-f09fdd48ec45/06dcc768-e02b-4ffc-ba56-3c014d406804/Untitled.png)
+![Adicione o Token](https://github.com/user-attachments/assets/21d756cf-97e1-4425-b3ef-9f8e1a1aeda1)
 
-1. **Acesso ao Endpoint `/teste`**: 
+3. **Acesso ao Endpoint `/teste`**: 
 
 Agora, acesse o endpoint `/teste` enviando o token de acesso junto com a requisição.
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/940820b4-5908-4f88-9e9f-f09fdd48ec45/764c4798-73ed-493a-85e9-3c2d3366892f/Untitled.png)
+![Acesso ao Endpoint](https://github.com/user-attachments/assets/89d5b97a-1e7e-4a39-b09f-c4a7f656c13a)
 
 Como você pode ver, tudo funcionou perfeitamente!
 
