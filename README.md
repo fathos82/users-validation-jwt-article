@@ -1,3 +1,4 @@
+# Validação por Tokenização JWT seguindo boas práticas:
 Olá, Dev! Se você esbarrou por aqui, deve estar cansado de pular de tutorial em tutorial tentando encontrar a forma correta de fazer autenticação com Spring seguindo boas práticas. Mas chega disso! Vou te mostrar neste post tudo que você precisa para construir uma validação por token seguindo as melhores práticas na arquitetura Spring!
 
 ### O que é validação por tokenização?
